@@ -1,0 +1,17 @@
+
+<app-listado-generico [listado]="peliculas">
+    <ng-container contenido>
+        <div *ngFor="let pelicula of peliculas; let indice = index" class="pelicula-contenedor">
+            <div>
+                película: {{ indice+1 }} {{ pelicula.titulo}}
+                <button class="btn btn-outline-danger btn-sm" (click)="borrarPelicula(indice)">Borrar Pelicula</button>
+            </div>
+            <div>
+                {{ pelicula.fechaLanzamiento | date : "dd-MMM-yyyy" }}
+            </div>
+            <div>
+                {{ pelicula.precio | currency}} 
+            </div>
+        </div>
+    </ng-container>
+</app-listado-generico>
